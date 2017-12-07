@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <link rel="stylesheet" href="assets/css/reset.css"/>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+   var config = {
+    apiKey: "AIzaSyD94X3mIUty1E1_H5dlA6inhkLSxXFL8eg",
+    authDomain: "train-scheduler-25a7d.firebaseapp.com",
+    databaseURL: "https://train-scheduler-25a7d.firebaseio.com",
+    projectId: "train-scheduler-25a7d",
+    storageBucket: "",
+    messagingSenderId: "1029098494136"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+  
+  
+
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <title>Train Schedule</title>
+
+</head>
+
+<body>
+  <div class="page-header">
+    <h1 class="text-center">Train Schedule</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Current Train Schedule
+          </div>
+          <table class="table">
+            <tbody id="train-table">
+              <thead>
+                <tr><td><strong>Train Name</strong></td><td><strong>Destination</strong></td><td><strong>Frequency (min)</strong></td><td><strong>Next Arrival</strong></td><td><strong>Minutes Away</strong></td></tr>
+              </thead>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            Add Train
+          </div>
+          <div class="panel-body">
+            <form id="train-form">
+              <div class="form-group">
+                <label>Train Name</label>
+                <input id="train-name" class="form-control" type="text" placeholder="RTA" />
+              </div>
+              <div class="form-group">
+                <label>Destination</label>
+                <input id="destination" class="form-control" type="text" placeholder="Cleveland"/>
+              </div>
+              <div class="form-group">
+                <label>First Train Time (HH:mm - military time)</label>
+                <input id="train-time" class="form-control" type="text" placeholder="00:00"/>
+              </div>
+              <div class="form-group">
+                <label>Frequency(min)</label>
+                <input id="frequency" class="form-control" type="text" placeholder="15"/>
+              </div>
+              <div class="form-group">
+                <input type="submit" value-"Submit" class="btn btn-primary"/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Internal Scripting -->
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
